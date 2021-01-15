@@ -59,10 +59,9 @@ public class ProductActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<Product>> call, Throwable t) {
                 progressDialog.dismiss();
-                Toast.makeText(ProductActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
+                String message = t.getLocalizedMessage();
+                Toast.makeText(ProductActivity.this, message, Toast.LENGTH_SHORT).show();
 
-                //to find out what went wrong :
-                tVListe.setText(t.getMessage());
             }
         });
 

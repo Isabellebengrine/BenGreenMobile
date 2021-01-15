@@ -1,5 +1,7 @@
 package org.isa.bengreenmobile;
 
+import android.app.Activity;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
@@ -22,6 +24,7 @@ import java.util.List;
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
 
     private List<Product> mProductList;
+
 
     public static class ProductViewHolder extends RecyclerView.ViewHolder {
 
@@ -53,46 +56,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
         Product currentItem = mProductList.get(position);
 
-        //13/01/21 - pb to display pictures from database url - test with default picture - ok :
-        holder.mImageView.setImageResource(R.drawable.notesmusic);
+        //15/01/21 with Glide to show product's picture from url in database:
+        GlideApp.with(holder.itemView.getContext())
+                .load(currentItem.getProductsPicture())
+                .into(holder.mImageView);
 
-//        URL url = null;
-//        try {
-//            url = new URL(currentItem.getProductsPicture());
-//        } catch (MalformedURLException e) {
-//            e.printStackTrace();
-//        }
-//        HttpURLConnection httpConn = null;
-//        try {
-//            httpConn = (HttpURLConnection) url.openConnection();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        try {
-//            httpConn.connect();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        int resCode = 0;
-//        try {
-//            resCode = httpConn.getResponseCode();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        if (resCode == HttpURLConnection.HTTP_OK) {
-//            InputStream in = null;
-//            try {
-//                in = httpConn.getInputStream();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//            Bitmap bitmap = BitmapFactory.decodeStream(in);
-//
-//            holder.mImageView.setImageBitmap(bitmap);
-//        }
-//
         holder.mTextView1.setText(currentItem.getProductsName());
         holder.mTextView2.setText(currentItem.getRubriqueName());
     }

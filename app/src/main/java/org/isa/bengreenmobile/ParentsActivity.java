@@ -41,10 +41,8 @@ public class ParentsActivity extends AppCompatActivity {
         progressDialog.setMessage("Loading....");
         progressDialog.show();
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2/apiVillageGreen/")
-                .addConverterFactory(GsonConverterFactory.create()).build();
-
+        ApiClient apiClient = new ApiClient();
+        Retrofit retrofit =  apiClient.getRetrofit();
         MonApi monApi = retrofit.create(MonApi.class);
         Call<List<Rubrique>> call = monApi.getParents();
 

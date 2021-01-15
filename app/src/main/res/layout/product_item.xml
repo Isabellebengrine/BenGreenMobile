@@ -15,7 +15,7 @@
         >
 
         <ImageView
-            android:layout_width="60dp"
+            android:layout_width="100dp"
             android:layout_height="100dp"
             android:padding="2dp"
             android:id="@+id/iVProductPicture"
@@ -48,6 +48,7 @@
             android:layout_below="@+id/tVProductName"
             android:layout_alignBaseline="@id/iVProductPicture"
             android:text="Catégorie"
+            android:textColor="@color/white"
             android:fontFamily="casual"/>
 
     </RelativeLayout>
