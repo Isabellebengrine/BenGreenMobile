@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">BengreenMobile</string>
+    <string name="tVBienvenueString">Bienvenue chez BenGreen,\nle meilleur de la musique\nà votre service</string>
+    <string name="tVCatalogueString">Accédez à notre catalogue :</string>
+    <string name="btnCategorieString">Par catégories</string>
+    <string name="btnProduitString">Liste de tous nos produits</string>
+    <string name="tVRubriqueNameString">Nom de la catégorie</string>
+    <string name="tVCategoriesString">CATALOGUE\nCatégories principales:</string>
+    <string name="ImageDescription">Image de la catégorie</string>
+    <string name="tVListe">Liste de nos produits :</string>
+    <string name="ProductPictureDescription">Image du produit</string>
+    <string name="ProductNameString">Nom du produit</string>
+</resources>
